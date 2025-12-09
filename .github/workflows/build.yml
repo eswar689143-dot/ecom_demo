@@ -29,6 +29,7 @@ jobs:
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/ecom_demo:latest .
 
       # 4. Push Docker image to DockerHub
+      # update the dockerhub key previliges
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/ecom_demo:latest
