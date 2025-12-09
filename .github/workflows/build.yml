@@ -46,6 +46,6 @@ jobs:
             docker rm myapp || true
 
             echo "Starting new container..."
-            docker run -d -p 80:80 --name ecom_demo ${{ secrets.DOCKERHUB_USERNAME }}/ecom_demo:latest
+            docker run -d -p 80:80 --name app1 ${{ secrets.DOCKERHUB_USERNAME }}/ecom_demo:latest
 
             echo "Deployment Complete!"
