@@ -16,6 +16,8 @@ jobs:
       - name: Build WAR using Maven
         run: mvn -B package --file pom.xml
 
+      - name: Check target folder
+        run: ls -R target
 
       - name: SonarQube Scan
         uses: actions/checkout@v4
