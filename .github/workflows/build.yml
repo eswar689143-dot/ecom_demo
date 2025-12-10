@@ -12,12 +12,6 @@ jobs:
       # 1. Checkout Code
       - name: Checkout repository
         uses: actions/checkout@v3
-        
-      - name: Build WAR
-        run: mvn clean package -DskipTests
-
-      - name: Verify target exists
-        run: ls -R target
 
       - name: SonarQube Scan
         uses: actions/checkout@v4
@@ -33,6 +27,13 @@ jobs:
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Build WAR
+        run: mvn clean package -DskipTests
+
+      - name: Verify target exists
+        run: ls -R target
+
 
       # 2. Login to DockerHub
       - name: Login to DockerHub
