@@ -16,6 +16,8 @@ jobs:
       - name: Build WAR
         run: mvn clean package -DskipTests
 
+      - name: Verify target exists
+        run: ls -R target
 
       - name: SonarQube Scan
         uses: actions/checkout@v4
