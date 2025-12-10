@@ -12,7 +12,7 @@
     <name>Java Home myweb</name>
 
     <build>
-        <finalName>myweb</finalName>
+        <finalName>mywweb</finalName>
 
         <plugins>
             <!-- Compiler plugin -->
