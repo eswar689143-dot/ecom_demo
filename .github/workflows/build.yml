@@ -16,9 +16,6 @@ jobs:
       - name: Build WAR using Maven
         run: mvn -B package --file pom.xml
 
-      - name: Check target folder
-        run: ls -R target
-
       - name: SonarQube Scan
         uses: actions/checkout@v4
         with:
@@ -34,6 +31,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+      - name: List files
+        run: ls -R .
 
       # 2. Login to DockerHub
       - name: Login to DockerHub
